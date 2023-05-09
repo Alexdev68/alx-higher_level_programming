@@ -19,12 +19,19 @@ listint_t *insert_node(listint_t **head, int number)
 	new_node->n = number;
 	new_node->next = NULL;
 
+	i = 0;
 	if (number > 1024)
 	{
-		new_node = add_nodeint_end(&current, number);
+		while (current != NULL)
+		{
+			current = current->next
+			i++;
+		}
+		new_node->next = current->next;
+		current->next = new_node;
+
 	}
 
-	i = 0;
 	pos = 0;
 	if (number > 4 && number < 98)
 	{
