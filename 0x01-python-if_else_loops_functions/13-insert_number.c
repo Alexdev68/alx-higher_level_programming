@@ -20,26 +20,18 @@ listint_t *insert_node(listint_t **head, int number)
 	new_node->next = NULL;
 
 	i = 0;
+	pos = 0;
 	if (number > 1024)
 	{
-		while (current != NULL)
-		{
-			current = current->next;
-			i++;
-		}
-		new_node->next = current->next;
-		current->next = new_node;
-
+		pos += 8;
 	}
-
-	pos = 0;
-	if (number > 4 && number < 98)
+	else if (number > 4 && number < 98)
 	{
 		pos += 4;
 	}
-	if (number < 0)
+	else if (number < 0)
 	{
-		pos += 0;
+		pos += -1;
 	}
 	while (i < pos)
 	{
