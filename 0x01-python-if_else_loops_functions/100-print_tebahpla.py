@@ -1,3 +1,3 @@
 #!/usr/bin/python3
 
-print("zYxWvUtSrQpOnMlKjIhGfEdCbA", end='')
+print("zYxWvUtSrQpOnMlKjIhGfEdCbA".format(''), end='')
