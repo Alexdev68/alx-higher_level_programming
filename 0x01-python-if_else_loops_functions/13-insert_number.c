@@ -37,7 +37,7 @@ listint_t *insert_node(listint_t **head, int number)
 	}
 	else if (i > 98 && i <=402)
 	{
-		pos += 5
+		pos += 5;
 	}
 	while (i < pos)
 	{
