@@ -26,23 +26,22 @@ listint_t *insert_node(listint_t **head, int number)
 		new_node = (add_nodeint_end(&current, number));
 		return (new_node);
 	}
-	else if (number > 4 && number < 98)
-	{
-		pos += 4;
-	}
 	else if (number < 0)
 	{
 		new_node->next = *head;
 		*head = new_node;
 	}
-	while (i < pos)
+	if (i > 4 && i <= 98)
 	{
-		current = current->next;
-		i++;
-	}
+		while (i < 4)
+		{
+			current = current->next;
+			i++;
+		}
 
-	new_node->next = current->next;
-	current->next = new_node;
+		new_node->next = current->next;
+		current->next = new_node;
+	}
 
 	return (new_node);
 }
