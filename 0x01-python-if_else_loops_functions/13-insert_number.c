@@ -24,7 +24,7 @@ listint_t *insert_node(listint_t **head, int number)
 	if (number > 1024)
 	{
 		new_node = (add_nodeint_end(&current, number));
-		return (new_node)
+		return (new_node);
 	}
 	else if (number > 4 && number < 98)
 	{
