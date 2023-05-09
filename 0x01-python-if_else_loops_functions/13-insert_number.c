@@ -23,7 +23,8 @@ listint_t *insert_node(listint_t **head, int number)
 	pos = 0;
 	if (number > 1024)
 	{
-		pos += 8;
+		new_node = (add_nodeint_end(&current, number));
+		return (new_node)
 	}
 	else if (number > 4 && number < 98)
 	{
