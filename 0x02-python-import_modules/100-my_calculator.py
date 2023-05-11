@@ -5,14 +5,14 @@ no_args = len(argv)
 
 if __name__ == "__main__":
 
+    if no_args != 4:
+        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
+        exit(1)
+
     operators = "+-*/"
     a = int(argv[1])
     sign = argv[2]
     b = int(argv[3])
-
-    if no_args != 4:
-        print("Usage: ./100-my_calculator.py <a> <operator> <b>")
-        exit(1)
 
     if sign not in operators:
         print("Unknown operator. Available operators: +, -, * and /")
