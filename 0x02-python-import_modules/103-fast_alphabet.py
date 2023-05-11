@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-print("ABCDEFGHIJKLMNOPQRSTUVWXYZ", end='')
-print()
+import string
+print(string.ascii_uppercase)
