@@ -4,7 +4,7 @@ def multiple_returns(sentence):
     b = sentence[0]
 
     if a == 0:
-        b = None
+        sentence = None
 
     tuple_weird = (a, b)
     return tuple_weird
