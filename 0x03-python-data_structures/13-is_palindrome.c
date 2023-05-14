@@ -27,18 +27,13 @@ int is_palindrome(listint_t **head)
 		s_str[i] = current->n;
 	}
 
-	count = i;
-	i = 0;
-	j = count - 1;
-	while (i < j)
+	for (i = 0, j = len - 1; i < j; i++, j--)
 	{
 		if (s_str[i] != s_str[j])
 		{
 			free(s_str);
 			return (0);
 		}
-		i++;
-		j--;
 	}
 	free(s_str);
 	return (1);
