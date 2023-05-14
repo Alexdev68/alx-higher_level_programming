@@ -12,14 +12,14 @@ int is_palindrome(listint_t **head)
 	int list[1024];
 	int *s_str;
 
-	if (*head == NULL)
-		return (1);
+	if (head == NULL)
+		return (0);
 	current = *head;
 	for (i = 0; current != NULL; current = current->next, i++)
 		len++;
 	s_str = malloc(sizeof(int) * (len + 1));
-	i = 0;
-	for (current = *head; current != NULL; current = current->next, i++)
+
+	for (current = *head; current != NULL; current = current->next, i--)
 		s_str[i] = current->n;
 
 	for (k = len - 1; k >= 0; k--)
