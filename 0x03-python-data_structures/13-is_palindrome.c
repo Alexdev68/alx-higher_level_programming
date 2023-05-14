@@ -9,6 +9,7 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *current = *head;
 	int i = 0, j = 0, len = 0, k;
+	int list[1024];
 
 	if (current == NULL)
 		return (1);
@@ -23,24 +24,22 @@ int is_palindrome(listint_t **head)
 		s_str[i] = current->n;
 	s_str[i] = '\0';
 
-	char r_str[len + 1];
-
 	for (k = len - 1; k >= 0; k--)
 	{
-		r_str[j] = s_str[k];
+		list[j] = s_str[k];
 		j++;
 	}
-	r_str[j] = '\0';
+	list[j] = '\0';
 	i = 0;
 	j = 0;
 	while (i < len && j < len)
 	{
-		if (s_str[i] != r_str[j])
+		if (s_str[i] != list[j])
 			break;
 		i++;
 		j++;
 	}
-	if (s_str[i] == '\0' && r_str[j] == '\0')
+	if (s_str[i] == '\0' && list[j] == '\0')
 		return (1);
 	return (0);
 }
