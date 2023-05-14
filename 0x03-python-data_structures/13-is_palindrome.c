@@ -8,7 +8,6 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *current = *head;
-	char *s_str;
 	int i = 0, j = 0, len = 0, k;
 
 	if (current == NULL)
@@ -18,7 +17,7 @@ int is_palindrome(listint_t **head)
 		len++;
 		current = current->next;
 	}
-	s_str = malloc(sizeof(char) * (len + 1));
+	char s_str[len + 1];
 
 	for (current = *head; current != NULL; current = current->next, i++)
 		s_str[i] = current->n;
@@ -43,6 +42,5 @@ int is_palindrome(listint_t **head)
 	}
 	if (s_str[i] == '\0' && r_str[j] == '\0')
 		return (1);
-	free(s_str);
 	return (0);
 }
