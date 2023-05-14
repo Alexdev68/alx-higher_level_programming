@@ -18,7 +18,7 @@ int is_palindrome(listint_t **head)
 		len++;
 		current = current->next;
 	}
-	char s_str[len + 1];
+	int s_str[len + 1];
 
 	for (current = *head; current != NULL; current = current->next, i++)
 		s_str[i] = current->n;
