@@ -10,6 +10,7 @@ int is_palindrome(listint_t **head)
 	listint_t *current = *head;
 	int i = 0, j = 0, len = 0, k;
 	int list[1024];
+	char *s_str;
 
 	if (current == NULL)
 		return (1);
@@ -18,8 +19,7 @@ int is_palindrome(listint_t **head)
 		len++;
 		current = current->next;
 	}
-	int s_str[len + 1];
-
+	s_str = malloc(sizeof(char) * (len + 1));
 	for (current = *head; current != NULL; current = current->next, i++)
 		s_str[i] = current->n;
 	s_str[i] = '\0';
@@ -41,5 +41,6 @@ int is_palindrome(listint_t **head)
 	}
 	if (s_str[i] == '\0' && list[j] == '\0')
 		return (1);
+	free(s_str);
 	return (0);
 }
