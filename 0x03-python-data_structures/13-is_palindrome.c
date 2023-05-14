@@ -34,7 +34,7 @@ int is_palindrome(listint_t **head)
 	while (i < len && j < len)
 	{
 		if (s_str[i] != list[j])
-			break;
+			return (0);
 		i++;
 		j++;
 	}
