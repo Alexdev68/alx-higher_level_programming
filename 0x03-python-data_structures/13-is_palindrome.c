@@ -13,7 +13,6 @@ int is_palindrome(listint_t **head)
 
 	if (current == NULL)
 		return (1);
-
 	while (current != NULL)
 	{
 		len++;
@@ -28,7 +27,6 @@ int is_palindrome(listint_t **head)
 		i++;
 	}
 	s_str[i] = '\0';
-
 	char r_str[len + 1];
 
 	for (k = len - 1; k >= 0; k--)
