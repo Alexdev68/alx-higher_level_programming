@@ -19,14 +19,11 @@ int is_palindrome(listint_t **head)
 		current = current->next;
 	}
 	s_str = malloc(sizeof(char) * (len + 1));
-	current = *head;
-	while (current != NULL)
-	{
+
+	for (current = *head; current != NULL; current = current->next, i++)
 		s_str[i] = current->n;
-		current = current->next;
-		i++;
-	}
 	s_str[i] = '\0';
+
 	char r_str[len + 1];
 
 	for (k = len - 1; k >= 0; k--)
@@ -46,5 +43,6 @@ int is_palindrome(listint_t **head)
 	}
 	if (s_str[i] == '\0' && r_str[j] == '\0')
 		return (1);
+	free(s_str);
 	return (0);
 }
