@@ -13,13 +13,10 @@ int is_palindrome(listint_t **head)
 	char *s_str;
 
 	if (*head == NULL)
-		return (0);
+		return (1);
 	current = *head;
-	while (current != NULL)
-	{
+	for (i = 0; current != NULL; current = current->next, i++)
 		len++;
-		current = current->next;
-	}
 	s_str = malloc(sizeof(char) * (len + 1));
 	for (current = *head; current != NULL; current = current->next, i++)
 		s_str[i] = current->n;
