@@ -7,13 +7,14 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *current = *head;
+	listint_t *current;
 	int i = 0, j = 0, len = 0, k;
 	int list[1024];
 	char *s_str;
 
-	if (current == NULL)
+	if (*head == NULL)
 		return (0);
+	current = *head;
 	while (current != NULL)
 	{
 		len++;
