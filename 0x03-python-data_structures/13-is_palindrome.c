@@ -22,20 +22,12 @@ int is_palindrome(listint_t **head)
 	for (current = *head; current != NULL; current = current->next, i--)
 		s_str[i] = current->n;
 
-	for (k = len - 1; k >= 0; k--)
+	for (i = 0; i < len; i++, current = current->next)
 	{
-		list[j] = s_str[k];
-		j++;
-	}
-	i = 0;
-	j = 0;
-	while (i < len && j < len)
-	{
-		if (s_str[i] != list[j])
+		if (s_str[i] != current->n)
 			return (0);
-		i++;
-		j++;
 	}
+
 	free(s_str);
 	return (1);
 }
