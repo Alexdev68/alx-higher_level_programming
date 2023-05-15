@@ -9,7 +9,7 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *current = *head;
 	int i, j, len = 0;
-	int s_str[1024];
+	int s_str[];
 
 	for (i = 0; current != NULL; current = current->next, i++)
 	{
@@ -19,6 +19,7 @@ int is_palindrome(listint_t **head)
 	{
 		return (1);
 	}
+	s_str[len];
 
 	i = 0;
 	for (current = *head; current != NULL; current = current->next, i++)
