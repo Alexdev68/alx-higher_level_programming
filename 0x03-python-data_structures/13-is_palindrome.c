@@ -9,9 +9,9 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *current = *head;
 	int i, j, len = 0;
-	char *s_str;
+	char s_str[1000];
 
-	for (i = 0; current != NULL; current = current->next, i++)
+	for (i = 0; current != NULL, i < 999; current = current->next, i++)
 	{
 		len++;
 	}
@@ -19,7 +19,6 @@ int is_palindrome(listint_t **head)
 	{
 		return (1);
 	}
-	s_str = malloc(sizeof(int) * len);
 
 	i = 0;
 	for (current = *head; current != NULL; current = current->next, i++)
