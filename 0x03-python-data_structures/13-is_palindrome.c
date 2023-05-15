@@ -30,10 +30,8 @@ int is_palindrome(listint_t **head)
 	{
 		if (s_str[i] != s_str[j])
 		{
-			free(s_str);
 			return (0);
 		}
 	}
-	free(s_str);
 	return (1);
 }
