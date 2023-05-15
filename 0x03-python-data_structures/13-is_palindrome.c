@@ -11,7 +11,7 @@ int is_palindrome(listint_t **head)
 	int i, j, len = 0;
 	char s_str[1000];
 
-	for (i = 0; current != NULL, i < 999; current = current->next, i++)
+	for (i = 0; current != NULL && i < 999; current = current->next, i++)
 	{
 		len++;
 	}
