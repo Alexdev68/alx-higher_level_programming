@@ -9,7 +9,7 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *current = *head;
 	int i, j, len = 0;
-	char s_str[20];
+	char *s_str;
 
 	for (i = 0; current != NULL; current = current->next, i++)
 	{
@@ -19,6 +19,7 @@ int is_palindrome(listint_t **head)
 	{
 		return (1);
 	}
+	s_str = malloc(sizeof(int) * len);
 
 	i = 0;
 	for (current = *head; current != NULL; current = current->next, i++)
