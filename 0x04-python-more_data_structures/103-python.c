@@ -50,7 +50,7 @@ void print_python_bytes(PyObject *p)
 
 	for (j = 0; j < i; j++)
 	{
-		printf(" %02x", str[j]);
+		printf(" %02hhx", str[j]);
 	}
 	putchar('\n');
 }
