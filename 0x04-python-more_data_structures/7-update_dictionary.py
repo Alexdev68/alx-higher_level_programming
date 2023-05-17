@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 def update_dictionary(a_dictionary, key, value):
+    if not a_dictionary:
+        return
+
     for i in a_dictionary:
         a_dictionary.update({key: value})
 
