@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 def print_sorted_dictionary(a_dictionary):
-    sort = sorted(a_dictionary.items())
-    my_dict = dict(sort)
+    change = sorted(a_dictionary.items())
+    my_dict = dict(change)
 
     for i in my_dict:
-        print(i, ':', my_dict[i])
+        print("{}: {}".format(i, my_dict[i]))
