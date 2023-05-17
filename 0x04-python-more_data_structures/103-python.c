@@ -10,19 +10,26 @@ void print_python_list(PyObject *p)
 
 	printf("[*] Python list info\n");
 	printf("[*] Size of the Python List = %d\n", (int)PyList_GET_SIZE(p));
-	printf("[*] Allocated = %d\n", (int)((pyListObject *)p)->allocated);
+	printf("[*] Allocated = %d\n", (int)((PyListObject *)p)->allocated);
 
 	for (i = 0; i < (int)PyList_GET_SIZE(p); i++)
 	{
 		PyObject *item = PyList_GET_ITEM(p, i);
 
-		printf("Element %d: %s\n", i, (char *)PyObject_Type(item)->tp_name);
+		printf("Element %d: %s\n", i, (char *)(item)->ob_type->tp_name);
 	}
 }
 
 void print_python_bytes(PyObject *p)
 {
 	int i;
+	int j;
+
+	if (PyBytes_Check(p) == 0)
+	{
+		printf("  [ERROR] Invalid Bytes Object\n");
+		return;
+	}
 
 	printf("[.] bytes object info\n");
 	printf("  size: %d\n", (int)PyBytes_Size(p));
@@ -32,18 +39,18 @@ void print_python_bytes(PyObject *p)
 
 	if ((int)PyBytes_Size(p) < 10)
 	{
-		i = (int)PyBytes_Size(p) + 1
+		i = (int)PyBytes_Size(p) + 1;
 	}
 	else
 	{
-		i = 10
+		i = 10;
 	}
 
 	printf("  first %d bytes: ", i);
 
-	for (i = 0; i < (int)PyBytes_Size(p) + 2; i++)
+	for (j = 0; j < i; j++)
 	{
-		printf(" %02x", str[i]);
+		printf(" %02x", str[j]);
 	}
 	putchar('\n');
 }
