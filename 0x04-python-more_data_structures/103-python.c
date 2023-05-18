@@ -1,5 +1,6 @@
 #include <Python.h>
 #include <stdio.h>
+#include <string.h>
 
 void print_python_bytes(PyObject *p);
 void print_python_list(PyObject *p);
@@ -15,6 +16,10 @@ void print_python_list(PyObject *p)
 	for (i = 0; i < (int)PyList_GET_SIZE(p); i++)
 	{
 		PyObject *item = PyList_GET_ITEM(p, i);
+		if (strcmp((char *)(item)->ob_type->tp_name, "bytes") == 0)
+		{
+			print_python_bytes(item);
+		}
 
 		printf("Element %d: %s\n", i, (char *)(item)->ob_type->tp_name);
 	}
@@ -34,7 +39,7 @@ void print_python_bytes(PyObject *p)
 
 	printf("  size: %d\n", (int)PyBytes_Size(p));
 
-	const char *str = PyBytes_AS_STRING(p);
+	const char *str = PyBytes_AsString(p);
 	printf("  trying string: %s\n", str);
 
 	if ((int)PyBytes_Size(p) < 10)
