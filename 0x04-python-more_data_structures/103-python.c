@@ -16,12 +16,12 @@ void print_python_list(PyObject *p)
 	for (i = 0; i < (int)PyList_GET_SIZE(p); i++)
 	{
 		PyObject *item = PyList_GET_ITEM(p, i);
+
+		printf("Element %d: %s\n", i, (char *)(item)->ob_type->tp_name);
 		if (strcmp((char *)(item)->ob_type->tp_name, "bytes") == 0)
 		{
 			print_python_bytes(item);
 		}
-
-		printf("Element %d: %s\n", i, (char *)(item)->ob_type->tp_name);
 	}
 }
 
