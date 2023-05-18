@@ -25,13 +25,13 @@ void print_python_bytes(PyObject *p)
 	int i;
 	int j;
 
+	printf("[.] bytes object info\n");
 	if (PyBytes_Check(p) == 0)
 	{
 		printf("  [ERROR] Invalid Bytes Object\n");
 		return;
 	}
 
-	printf("[.] bytes object info\n");
 	printf("  size: %d\n", (int)PyBytes_Size(p));
 
 	const char *str = PyBytes_AS_STRING(p);
@@ -46,7 +46,7 @@ void print_python_bytes(PyObject *p)
 		i = 10;
 	}
 
-	printf("  first %d bytes: ", i);
+	printf("  first %d bytes:", i);
 
 	for (j = 0; j < i; j++)
 	{
