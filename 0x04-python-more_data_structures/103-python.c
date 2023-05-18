@@ -29,6 +29,7 @@ void print_python_bytes(PyObject *p)
 	if (PyBytes_Check(p) == 0)
 	{
 		printf("  [ERROR] Invalid Bytes Object\n");
+		return;
 	}
 
 	printf("  size: %d\n", (int)PyBytes_Size(p));
