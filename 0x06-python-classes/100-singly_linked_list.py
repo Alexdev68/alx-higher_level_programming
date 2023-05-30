@@ -58,13 +58,13 @@ class Node:
             Node: next_node
 
         Setter.
-            
+
             Arg:
                 value(Node): This is what the next_node is to be set to.
 
             Raises:
-                TypeError: If if next_node is not None and it's type is not 
-                Node.
+                TypeError: If if next_node is not None and it's type is not
+                 Node.
         """
         return self.__next_node
 
