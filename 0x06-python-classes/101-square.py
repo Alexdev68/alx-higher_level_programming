@@ -96,7 +96,7 @@ class Square:
             int: The result of size to the power of 2
         """
         return self._Square__size ** 2
-    
+
     def my_print(self):
         print(self.this_print(), end='')
 
