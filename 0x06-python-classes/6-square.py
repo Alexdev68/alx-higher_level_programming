@@ -106,10 +106,12 @@ class Square:
             return
 
         else:
+            for ui in range(self.__position[1]):
+                print()
             for i in range(self._Square__size):
                 for j in range(self._Square__size):
                     if j == 0:
-                        for d in range(self.__position[0]):
+                        for h in range(self.__position[0]):
                             print(" ", end='')
                     print("#", end='')
                 print()
