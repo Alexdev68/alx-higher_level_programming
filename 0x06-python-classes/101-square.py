@@ -96,14 +96,17 @@ class Square:
             int: The result of size to the power of 2
         """
         return self._Square__size ** 2
-
+    
     def my_print(self):
+        print(self.this_print(), end='')
+
+    def this_print(self):
         """This prints a square with the ``#`` character and puts spaces using
          position.
         """
         square1 = ""
         if self._Square__size == 0:
-            return "\n"
+            return
 
         else:
             for ui in range(self.__position[1]):
@@ -114,12 +117,11 @@ class Square:
                         for h in range(self.__position[0]):
                             square1 += " "
                     square1 += "#"
-                if i != self._Square__size - 1:
-                    square1 += "\n"
+                square1 += "\n"
         return square1
 
     def __str__(self):
         """This returns a call to the my_print function so an external print
          can print the square.
          """
-        return self.my_print()
+        return self.this_print()[:-1]
