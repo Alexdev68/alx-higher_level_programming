@@ -80,5 +80,5 @@ void print_python_float(PyObject *p)
 	double val = ((PyFloatObject *)p)->ob_fval;
 	char *fl_str = PyOS_double_to_string(val, 'r', 0, Py_DTSF_ADD_DOT_0, NULL);
 
-        printf("  value: %s", fl_str);
+        printf("  value: %s\n", fl_str);
 }
