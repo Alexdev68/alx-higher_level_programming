@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module houses a class ``MagicClass`` and imports math for pi."""
 import math
+import dis
 
 
 class MagicClass:
@@ -21,8 +22,7 @@ class MagicClass:
         """
         self._MagicClass__radius = 0
 
-        if type(radius) is not int:
-            if type(radius) is not float:
+        if type(radius) is not int and type(radius) is not float:
                 raise TypeError('radius must be a number')
         self._MagicClass__radius = radius
         return None
@@ -42,3 +42,6 @@ class MagicClass:
             int: (2 * math.pi) * self._MagicClass__radius
         """
         return 2 * math.pi * self._MagicClass__radius
+
+
+dis.dis(MagicClass)
