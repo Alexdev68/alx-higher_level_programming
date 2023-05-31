@@ -106,7 +106,7 @@ class Square:
         """
         square1 = ""
         if self._Square__size == 0:
-            return
+            return "\n"
 
         else:
             for ui in range(self.__position[1]):
