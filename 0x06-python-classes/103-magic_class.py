@@ -31,7 +31,7 @@ class MagicClass:
         """area method
 
         Returns:
-     i       int: (self._MagicClass__radius ** 2) * math.pi)
+            int: (self._MagicClass__radius ** 2) * math.pi)
         """
         return self._MagicClass__radius ** 2 * math.pi
 
