@@ -1,0 +1,44 @@
+a and b ar initialized as a and b=89.
+Then a and b are checked so they can be either int or float then if they are
+float then they are type casted to int.
+The function then returns the addition of a and b.
+If nothing is passed into b it's default is 89.
+
+::
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+	>>> add_integer(2)
+	100
+
+If you passed floats they will be type casted
+
+::
+
+	>>> add_integer(2.6, 9.7)
+	11
+	>>> add_integer(50.9, -2.6)
+	48
+
+if you passed a type other than int or float an error will be raised
+
+::
+
+	>>> add_integer('thing', 23)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+	>>> add_integer(9, 'kettle')
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
+
+if you passed two integers it will do normal addition
+
+::
+
+	>>> add_integer(1, 2)
+	3
+	>>> add_integer(50, 60)
+	110
+	>>> add_integer(-98)
+	0
