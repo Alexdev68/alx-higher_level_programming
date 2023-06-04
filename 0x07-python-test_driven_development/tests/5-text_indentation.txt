@@ -1,0 +1,36 @@
+This file tests the text_indentation function
+
+::
+
+	>>> text_indentation = __import__("5-text_indentation").text_indentation
+	>>> text_indentation("""I am just spit balling here. How would one know I was spit balling? One could know maybe by: Thinking.""")
+	I am just spit balling here.
+	<BLANKLINE>
+	How would one know I was spit balling?
+	<BLANKLINE>
+	One could know maybe by:
+	<BLANKLINE>
+	Thinking.
+	<BLANKLINE>
+	>>> text_indentation(24)
+	Traceback (most recent call last):
+		...
+	TypeError: text must be a string
+	>>> text_indentation("""24. 23? 77:""")
+	24.
+	<BLANKLINE>
+	23?
+	<BLANKLINE>
+	77:
+	<BLANKLINE>
+	>>> text_indentation(""".?:.:""")
+	.
+	<BLANKLINE>
+	?
+	<BLANKLINE>
+	:
+	<BLANKLINE>
+	.
+	<BLANKLINE>
+	:
+	<BLANKLINE>

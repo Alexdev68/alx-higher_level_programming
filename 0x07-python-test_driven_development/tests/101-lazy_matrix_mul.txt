@@ -1,0 +1,28 @@
+This file tests a function that multiplies all members of a matrix using the NumPy module
+
+::
+
+        >>> matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+        >>> matrix_mul([[2, 3], [4, 5]], [[12, 4], [23, 9]])
+	array([[ 93,  35],
+	       [163,  61]])
+        >>> matrix_mul((2, 4), [[12, 4], [23, 9]])
+        Traceback (most recent call last):
+                ...
+        TypeError: m_a must be of type list
+        >>> matrix_mul([[2, 3], [4, 5]], (25, 56))
+        Traceback (most recent call last):
+                ...
+        TypeError: m_b must be of type list
+        >>> matrix_mul([[2, 3], [4, 5]], [(25, 56), [4, 15]])
+        Traceback (most recent call last):
+                ...
+        TypeError: m_b has to be a list of lists
+        >>> matrix_mul([], [[12, 4], [23, 9]])
+        Traceback (most recent call last):
+                ...
+        TypeError: m_a must not be empty
+        >>> matrix_mul([[2, 3], [4, 5]], [[12, 'Y'], [23, 9]])
+        Traceback (most recent call last):
+                ...
+        TypeError: m_b should contain just integers or floats
