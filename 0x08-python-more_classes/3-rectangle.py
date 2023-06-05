@@ -79,7 +79,7 @@ class Rectangle:
 
         return (self.__width * 2) + (self.__height * 2)
 
-    def __str__(self):
+    def print_rectangle(self):
         """This returns a string contain the blueprints to print out the \
                 rectangle.
         """
@@ -91,5 +91,9 @@ class Rectangle:
         for i in range(self.__height):
             for j in range(self.__width):
                 rec += "#"
-            rec += "\n"
+            if i != self.__height - 1:
+                rec += "\n"
         return rec
+
+    def __str__(self):
+        return self.print_rectangle()
