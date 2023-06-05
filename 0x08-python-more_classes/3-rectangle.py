@@ -84,6 +84,9 @@ class Rectangle:
                 rectangle.
         """
         rec = ''
+        emp = ''
+        if self.__width == 0 or self.__height == 0:
+            return emp
 
         for i in range(self.__height):
             for j in range(self.__width):
