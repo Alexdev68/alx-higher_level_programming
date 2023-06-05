@@ -4,9 +4,10 @@
 void print_python_string(PyObject *p)
 {
 	printf("[.] string object info\n");
-	if (!PyUnicodeCheck(p))
+	if (strcmp(p->ob_type->tp_name, "str"))
 	{
 		printf("  [ERROR] Invalid String Object\n");
+		return;
 	}
 
 	printf("  type:");
@@ -15,11 +16,13 @@ void print_python_string(PyObject *p)
 	{
 		printf(" compact ascii\n");
 	}
-	if (PyUnicode_IS_COMPACT(p))
+	else if (PyUnicode_IS_COMPACT(p))
 	{
-		printf(" compact unicode object\n")
+		printf(" compact unicode object\n");
 	}
 
-	printf("  length: %d\n", PyUnicode_GET_LENGTH(p));
-	printf("  value: %s\n", PyObject_Print(p, stdout, 1));
+	printf("  length: %d\n", (int)PyUnicode_GET_LENGTH(p));
+	printf("  value: ");
+	PyObject_Print(p, stdout, 1);
+	putchar('\n');
 }
