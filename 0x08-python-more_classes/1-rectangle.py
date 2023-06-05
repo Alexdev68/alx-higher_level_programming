@@ -7,7 +7,8 @@ class Rectangle:
     """This is an empty class.
     """
     def __init__(self, width=0, height=0):
-        """This instance method initializes self._Rectangle__width and self._Rectangle__height.
+        """This instance method initializes self._Rectangle__width and \
+                self._Rectangle__height.
         """
         self._Rectangle__width = width
         self._Rectangle__height = height
