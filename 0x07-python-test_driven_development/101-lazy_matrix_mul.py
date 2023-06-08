@@ -9,9 +9,11 @@ def lazy_matrix_mul(m_a, m_b):
     """This function multplies two matrices with the use of numpy.
     """
     if not isinstance(m_a, list):
-        raise TypeError('m_a must be of type list')
+        raise TypeError('Scalar operands are not allowed, use \'*\' '
+                            'instead')
     if not isinstance(m_b, list):
-        raise TypeError('m_b must be of type list')
+        raise TypeError('Scalar operands are not allowed, use \'*\' '
+                            'instead')
     if m_a == [] or m_a == [[]]:
         raise TypeError('m_a must not be empty')
     if m_b == [] or m_b == [[]]:
