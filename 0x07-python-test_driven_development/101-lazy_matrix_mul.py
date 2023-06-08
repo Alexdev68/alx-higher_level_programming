@@ -15,13 +15,11 @@ def lazy_matrix_mul(m_a, m_b):
         raise TypeError('Scalar operands are not allowed, use \'*\' '
                         'instead')
     if m_a == [] or m_a == [[]]:
-        raise TypeError(f'shapes ({len(m_a)},{len(m_a[0])}) and ({len(m_b)},'
-                        '{len(m_b[0])}) not aligned: {len(m_a[0])} (dim 1) '
-                        '!= {len(m_b)} (dim 0)')
+        raise TypeError('shapes (1,0) and (2,2) not aligned: 0 (dim 1) != 2 '
+                        '(dim 0)')
     if m_b == [] or m_b == [[]]:
-        raise TypeError(f'shapes ({len(m_a)},{len(m_a[0])}) and ({len(m_b)},'
-                        '{len(m_b[0])}) not aligned: {len(m_a[0])} (dim 1) '
-                        '!= {len(m_b)} (dim 0)')
+        raise TypeError('shapes (2,2) and (1,0) not aligned: 2 (dim 1) != 1 '
+                        '(dim 0)')
 
     for i, j in zip(m_a, m_b):
         if not isinstance(i, list):
@@ -42,9 +40,8 @@ def lazy_matrix_mul(m_a, m_b):
                 raise TypeError('invalid data type for einsum')
 
     if len(m_a[0]) != len(m_b):
-        raise ValueError(f'shapes ({len(m_a)},{len(m_a[0])}) and ({len(m_b)},'
-                         '{len(m_b[0])}) not aligned: {len(m_a[0])} (dim 1) '
-                         '!= {len(m_b)} (dim 0)')
+        raise ValueError('shapes (2,3) and (2,2) not aligned: 3 (dim 1) != 2 '
+                         '(dim 0)')
 
     m_a = np.array(m_a)
     m_b = np.array(m_b)
