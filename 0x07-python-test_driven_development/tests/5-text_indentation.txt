@@ -30,7 +30,11 @@ This file tests the text_indentation function
 	<BLANKLINE>
 	:
 	<BLANKLINE>
-	>>> text_indentation()
+	>>> text_indentation(text="")
 	Traceback (most recent call last):
 		...
-	TypeError: text_indentation() missing 1 required positional argument: 'text'
+	TypeError: text must not be empty
+	>>> text_indentation(24)
+	Traceback (most recent call last):
+		...
+	TypeError: text must be a string
