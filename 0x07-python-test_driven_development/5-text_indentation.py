@@ -6,11 +6,11 @@
 def text_indentation(text):
     """This function indents a text due to the appearance of some characters.
     """
-    if len(text) == 0:
-        raise TypeError("text must not be empty")
-
     if not isinstance(text, str):
         raise TypeError('text must be a string')
+
+    if len(text) == 0:
+        raise TypeError("text must not be empty")
 
     for no, i in enumerate(text):
         if i == '.':
