@@ -33,3 +33,7 @@ This file test the capabilities of a function that prints a square
 	Traceback (most recent call last):
 		...
 	TypeError: size must be an integer
+	>>> print_square(size=None)
+	Traceback (most recent call last):
+		...
+	TypeError: size must not be nothing

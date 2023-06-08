@@ -6,6 +6,8 @@
 def print_square(size):
     """This function prints a square using the ``#`` character based on size.
     """
+    if size is None:
+        raise TypeError('size must not be nothing')
     if not isinstance(size, int):
         raise TypeError('size must be an integer')
     if size < 0:
