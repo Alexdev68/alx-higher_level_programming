@@ -19,22 +19,26 @@ def lazy_matrix_mul(m_a, m_b):
 
     for i, j in zip(m_a, m_b):
         if not isinstance(i, list):
-            raise TypeError('m_a has to be a list of lists')
+            raise TypeError('Scalar operands are not allowed, use \'*\' '
+                            'instead')
         if not isinstance(j, list):
-            raise TypeError('m_b has to be a list of lists')
+            raise TypeError('Scalar operands are not allowed, use \'*\' '
+                            'instead')
         if len(i) != len(m_a[0]):
-            raise TypeError('all rows of m_a must be of the same size')
+            raise TypeError('setting an array element with a sequence.')
         if len(j) != len(m_b[0]):
-            raise TypeError('all rows of m_b must be of the same size')
+            raise TypeError('setting an array element with a sequence.')
 
         for x, y in zip(i, j):
             if not isinstance(x, (int, float)):
-                raise TypeError('m_a should contain just integers or floats')
+                raise TypeError('invalid data type for einsum')
             if not isinstance(y, (int, float)):
-                raise TypeError('m_b should contain just integers or floats')
+                raise TypeError('invalid data type for einsum')
 
     if len(m_a[0]) != len(m_b):
-        raise ValueError('m_a can\'t be multiplied by m_b')
+        raise ValueError('shapes ({},{}) and ({},{}) not aligned: 0 (dim 1) '
+                         '!= 2 (dim 0)',format(len(m_a), len(m_a[0]), len(m_b),
+                              len(m_b[0])
 
     m_a = np.array(m_a)
     m_b = np.array(m_b)
