@@ -25,6 +25,8 @@ def text_indentation(text):
             print(":")
             print()
             continue
-        if text[no - 1] in ('.', '?', ':') and i == " " or i == "   ":
+        if text[no - 1] in ('.', '?', ':') and i == "    ":
+            continue
+        if text[no - 1] in ('.', '?', ':') and i == " ":
             continue
         print("{}".format(i), end='')
