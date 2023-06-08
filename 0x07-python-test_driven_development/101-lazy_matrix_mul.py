@@ -38,7 +38,7 @@ def lazy_matrix_mul(m_a, m_b):
     if len(m_a[0]) != len(m_b):
         raise ValueError('shapes ({},{}) and ({},{}) not aligned: 0 (dim 1) '
                          '!= 2 (dim 0)',format(len(m_a), len(m_a[0]), len(m_b),
-                              len(m_b[0])
+                              len(m_b[0])))
 
     m_a = np.array(m_a)
     m_b = np.array(m_b)
