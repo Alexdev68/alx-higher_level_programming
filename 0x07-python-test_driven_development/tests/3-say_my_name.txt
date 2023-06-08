@@ -15,3 +15,7 @@ This file performs tests on my say my name function
 	Traceback (most recent call last):
 		...
 	TypeError: first_name must be a string
+	>>> say_my_name("", "")
+	Traceback (most recent call last):
+		...
+	TypeError: These parameters can't be empty
