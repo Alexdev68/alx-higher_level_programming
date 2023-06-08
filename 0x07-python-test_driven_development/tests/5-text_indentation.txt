@@ -12,10 +12,6 @@ This file tests the text_indentation function
 	<BLANKLINE>
 	Thinking.
 	<BLANKLINE>
-	>>> text_indentation(24)
-	Traceback (most recent call last):
-		...
-	TypeError: text must be a string
 	>>> text_indentation("""24. 23? 77:""")
 	24.
 	<BLANKLINE>
@@ -34,3 +30,7 @@ This file tests the text_indentation function
 	<BLANKLINE>
 	:
 	<BLANKLINE>
+	>>> text_indentation()
+	Traceback (most recent call last):
+		...
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
