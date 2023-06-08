@@ -9,20 +9,20 @@ This file tests a function that multiplies all members of a matrix using the Num
         >>> matrix_mul((2, 4), [[12, 4], [23, 9]])
         Traceback (most recent call last):
                 ...
-        TypeError: m_a must be of type list
+        TypeError: Scalar operands are not allowed, use '*' instead
         >>> matrix_mul([[2, 3], [4, 5]], (25, 56))
         Traceback (most recent call last):
                 ...
-        TypeError: m_b must be of type list
+        TypeError: Scalar operands are not allowed, use '*' instead
         >>> matrix_mul([[2, 3], [4, 5]], [(25, 56), [4, 15]])
         Traceback (most recent call last):
                 ...
-        TypeError: m_b has to be a list of lists
+        TypeError: Scalar operands are not allowed, use '*' instead
         >>> matrix_mul([], [[12, 4], [23, 9]])
         Traceback (most recent call last):
                 ...
-        TypeError: m_a must not be empty
+        TypeError: shapes (1,0) and (2,2) not aligned: 0 (dim 1) != 2 (dim 0)
         >>> matrix_mul([[2, 3], [4, 5]], [[12, 'Y'], [23, 9]])
         Traceback (most recent call last):
                 ...
-        TypeError: m_b should contain just integers or floats
+	TypeError: invalid data type for einsum
