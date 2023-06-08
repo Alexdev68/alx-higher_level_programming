@@ -3,6 +3,8 @@
 the multiplication.
 """
 import numpy as np
+
+
 def lazy_matrix_mul(m_a, m_b):
     """This function multplies two matrices with the use of numpy.
     """
@@ -10,9 +12,9 @@ def lazy_matrix_mul(m_a, m_b):
         raise TypeError('m_a must be of type list')
     if not isinstance(m_b, list):
         raise TypeError('m_b must be of type list')
-    if m_a == []:
+    if m_a == [] or m_a == [[]]:
         raise TypeError('m_a must not be empty')
-    if m_b == []:
+    if m_b == [] or m_b == [[]]:
         raise TypeError('m_b must not be empty')
 
     for i, j in zip(m_a, m_b):
