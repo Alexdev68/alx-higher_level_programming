@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """This function houses a function that multiplies all members of a matrix.
 """
+
+
 def matrix_mul(m_a, m_b):
     """This function performs various checks in order to get the best output.
     """
@@ -8,9 +10,9 @@ def matrix_mul(m_a, m_b):
         raise TypeError('m_a must be a list')
     if not isinstance(m_b, list):
         raise TypeError('m_b must be a list')
-    if m_a == []:
+    if m_a == [[]]:
         raise TypeError('m_a can\'t be empty')
-    if m_b == []:
+    if m_b == [[]]:
         raise TypeError('m_b can\'t be empty')
 
     for i, j in zip(m_a, m_b):
