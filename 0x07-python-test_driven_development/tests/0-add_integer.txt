@@ -42,3 +42,13 @@ if you passed two integers it will do normal addition
 	110
 	>>> add_integer(-98)
 	0
+	>>> from math import inf
+	>>> add_integer(float(inf), 56)
+	Traceback (most recent call last):
+		...
+	ValueError: Float overflow
+	>>> from math import nan
+	>>> add_integer(float(nan), 23)
+	Traceback (most recent call last):
+		...
+	ValueError: cannot convert float NaN to integer
