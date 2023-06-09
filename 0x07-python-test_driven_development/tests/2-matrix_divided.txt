@@ -29,3 +29,21 @@ Tests on my matrix dividing function
 	Traceback (most recent call last):
 		...
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
+	>>> matrix = [[2, 4, 6, 8], [10, 12, 14, 16]]
+	>>> matrix_divided(matrix, "string")
+	Traceback (most recent call last):
+		...
+	TypeError: div must be a number
+	>>> from math import inf
+	>>> matrix_divided(matrix, div=float(inf))
+	Traceback (most recent call last):
+		...
+	ValueError: The value of div is too large
+	>>> matrix_divided(matrix, div=None)
+	Traceback (most recent call last):
+		...
+	TypeError: div can not be empty
+	>>> matrix_divided(matrix=[], div=None)
+	Traceback (most recent call last):
+		...
+	TypeError: Neither of them can be empty

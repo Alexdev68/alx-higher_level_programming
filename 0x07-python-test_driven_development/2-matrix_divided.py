@@ -18,7 +18,10 @@ def matrix_divided(matrix, div):
     if not isinstance(matrix, list):
         raise TypeError('matrix must be a matrix (list of lists) '
                         'of integers/floats')
-
+    if len(matrix) == 0 and div is None:
+        raise TypeError('Neither of them can be empty')
+    if div is None:
+        raise TypeError('div can not be empty')
     for i in matrix:
         if not isinstance(i, list):
             raise TypeError('matrix must be a matrix (list of lists) '
@@ -32,6 +35,8 @@ def matrix_divided(matrix, div):
     new_mat = [[0] * len(matrix[0]) for b in range(len(matrix))]
     if not isinstance(div, (int, float)):
         raise TypeError('div must be a number')
+    if div > 1000000:
+        raise ValueError('The value of div is too large')
     if div == 0:
         raise ZeroDivisionError('division by zero')
 
