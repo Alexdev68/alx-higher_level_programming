@@ -1,0 +1,23 @@
+This file test if the MyList class can sort a list
+
+::
+
+        >>> MyList = __import__('1-my_list').MyList
+        >>> dlist = MyList()
+	>>> dlist += [1, 2, -2, 0, 15]
+        >>> dlist.print_sorted()
+        [-2, 0, 1, 2, 15]
+        >>> print(dlist)
+        [1, 2, -2, 0, 15]
+        >>> dlist = MyList()
+	>>> dlist += [-1, -33, -77, -6, -25]
+        >>> dlist.print_sorted()
+        [-77, -33, -25, -6, -1]
+        >>> print(dlist)
+        [-1, -33, -77, -6, -25]
+        >>> dlist = MyList()
+	>>> dlist += [1.2, 2.3, 7.7, 0.3, 15.2]
+        >>> dlist.print_sorted()
+        [0.3, 1.2, 2.3, 7.7, 15.2]
+        >>> print(dlist)
+        [1.2, 2.3, 7.7, 0.3, 15.2]
