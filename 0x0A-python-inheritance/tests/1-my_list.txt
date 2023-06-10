@@ -4,11 +4,11 @@ This file test if the MyList class can sort a list that it inherits
 
         >>> MyList = __import__('1-my_list').MyList
         >>> dlist = MyList()
-	>>> dlist += [1, 2, -2, 0, 15]
+	>>> dlist += [-1, 2, -2, 0, -15]
         >>> dlist.print_sorted()
-        [-2, 0, 1, 2, 15]
+        [-15, -2, -1, 0, 2]
         >>> print(dlist)
-        [1, 2, -2, 0, 15]
+        [-1, 2, -2, 0, -15]
         >>> dlist = MyList()
 	>>> dlist += [-1, -33, -77, -6, -25]
         >>> dlist.print_sorted()
@@ -29,6 +29,6 @@ This file test if the MyList class can sort a list that it inherits
 	>>> dlist.print_sorted()
 	[]
 	>>> dlist = MyList()
-	>>> dlist += ["bat", "cat", "fat", "app", "got"]
+	>>> dlist += [1, 14, 2, 10, 5]
 	>>> dlist.print_sorted()
-	['app', 'bat', 'cat', 'fat', 'got']
+	[1, 2, 5, 10, 14]
