@@ -28,3 +28,7 @@ This file test if the MyList class can sort a list that it inherits
 	>>> dlist = MyList()
 	>>> dlist.print_sorted()
 	[]
+	>>> dlist = MyList()
+	>>> dlist += ["bat", "cat", "fat", "app", "got"]
+	>>> dlist.print_sorted()
+	['app', 'bat', 'cat', 'fat', 'got']
