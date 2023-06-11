@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-basegeometry = __import__('7-base_geometry')
+base_geometry = __import__('7-base_geometry').BaseGeometry
 
-class Rectangle(basegeometry.BaseGeometry):
+class Rectangle(base_geometry):
     def __init__(self, width, height):
         self.__width = width
         self.__height = height
 
-        super().integer_validator("width", self. __width)
-        super().integer_validator("height", self.__height)
+        base_geometry().integer_validator("width", self.__width)
+        base_geometry().integer_validator("height", self.__height)
