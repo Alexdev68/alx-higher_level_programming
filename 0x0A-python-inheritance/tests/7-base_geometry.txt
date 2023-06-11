@@ -44,3 +44,15 @@ This file test BaseGeometry class of 7-base_geometry.py.
         ...     bg.integer_validator("", 22)
         ... except Exception as e:
         ...     print("[{}] {}".format(e.__class__.__name__, e))
+	>>> from math import inf
+	>>> try:
+        ...     bg.integer_validator("an_int", float(inf))
+        ... except Exception as e:
+        ...     print("[{}] {}".format(e.__class__.__name__, e))
+	[TypeError] an_int must be an integer
+	>>> from math import nan
+	>>> try:
+        ...     bg.integer_validator("an_int", float(nan))
+        ... except Exception as e:
+        ...     print("[{}] {}".format(e.__class__.__name__, e))
+	[TypeError] an_int must be an integer
