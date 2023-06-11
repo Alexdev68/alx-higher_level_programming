@@ -44,3 +44,12 @@ This file test if the MyList class can sort a list that it inherits
 	[0, 0, 0, 0, 34]
 	>>> print(dlist)
 	[0, 0, 0, 0, 34]
+	>>> m = __import__("1-my_list").__doc__
+	>>> len(m) > 1
+	True
+	>>> c = __import__("1-my_list").MyList.__doc__
+	>>> len(c) > 1
+	True
+	>>> f = __import__("1-my_list").MyList.print_sorted.__doc__
+	>>> len(f) > 1
+	True
