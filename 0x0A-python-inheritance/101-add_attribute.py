@@ -10,7 +10,8 @@ def add_attribute(sh_cls, name, value):
                  attribute.
     """
     if type(sh_cls) in (int, str, type(None), tuple, list, bool, float, dict,
-                        set, complex):
+                        set, complex, bytes, bytearray, memoryview, range,
+                        frozenset):
         raise TypeError('can\'t add new attribute')
 
     setattr(sh_cls, name, value)
