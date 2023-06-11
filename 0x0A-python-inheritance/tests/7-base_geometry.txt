@@ -35,3 +35,8 @@ This file test BaseGeometry class of 7-base_geometry.py.
         ... except Exception as e:
         ...     print("[{}] {}".format(e.__class__.__name__, e))
 	[Exception] area() is not implemented
+	>>> try:
+        ...     bg.integer_validator("", None)
+        ... except Exception as e:
+        ...     print("[{}] {}".format(e.__class__.__name__, e))
+	[TypeError]  must be an integer
