@@ -14,4 +14,5 @@ def add_attribute(sh_cls, name, value):
                         frozenset, type):
         raise TypeError('can\'t add new attribute')
 
-    sh_cls.name = value
+    else:
+        setattr(sh_cls, name, value)
