@@ -9,10 +9,7 @@ def add_attribute(sh_cls, sh_nam, sh_val):
         If it's type is not a normal type from that tuple then it adds the new\
                  attribute.
     """
-    if type(sh_cls) in (int, str, type(None), tuple, list, bool, float, dict,
-                        set, complex, bytes, bytearray, memoryview, range,
-                        frozenset, type):
+    if not hasattr(sh_cls, "__dict__"):
         raise TypeError('can\'t add new attribute')
 
-    else:
-        setattr(sh_cls, sh_nam, sh_val)
+    setattr(sh_cls, sh_nam, sh_val)
