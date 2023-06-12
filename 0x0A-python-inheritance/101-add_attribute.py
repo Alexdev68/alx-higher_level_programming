@@ -3,7 +3,7 @@
 """
 
 
-def add_attribute(sh_cls, name, value):
+def add_attribute(sh_cls, sh_nam, sh_val):
     """This function checks if sh_cls is of any normal type then it raises an \
             exception.
         If it's type is not a normal type from that tuple then it adds the new\
@@ -15,4 +15,4 @@ def add_attribute(sh_cls, name, value):
         raise TypeError('can\'t add new attribute')
 
     else:
-        setattr(sh_cls, name, value)
+        setattr(sh_cls, sh_nam, sh_val)
