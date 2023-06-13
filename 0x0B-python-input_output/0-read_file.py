@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """This module contains a function that reads from a file.
 """
+
+
 def read_file(filename=""):
     """This function reads from a file and prints out it's content.
     """
