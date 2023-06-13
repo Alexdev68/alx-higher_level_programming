@@ -42,8 +42,13 @@ class Student:
         """This method sets the values of first name last name and age.
         """
         items = json.items()
-        dlist = list(items)
 
-        self.first_name = dlist[0][1]
-        self.last_name = dlist[1][1]
-        self.age = dlist[2][1]
+        for name, val in items:
+            if name == "first_name":
+                self.first_name = val
+
+            elif name == "last_name":
+                self.last_name = val
+
+            elif name == "age":
+                self.age = val
