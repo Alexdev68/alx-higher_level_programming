@@ -12,8 +12,11 @@ try:
         count += 1
         lst_line = line.split()
         tot_size += int(lst_line[8])
-        if lst_line[7] in all_stats:
-            my_dict[lst_line[7]] = my_dict.get(lst_line[7], 0) + 1
+        try:
+            if lst_line[7] in all_stats:
+                my_dict[lst_line[7]] = my_dict.get(lst_line[7], 0) + 1
+        except IndexError:
+            pass
         if count == 10:
             print(f"File size: {tot_size}")
             for key in sorted(my_dict.keys()):
