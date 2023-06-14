@@ -17,10 +17,10 @@ try:
         count += 1
         lst_line = line.split()
         try:
-            tot_size += int(lst_line[8])
-            if lst_line[7] in all_stats:
-                my_dict[lst_line[7]] = my_dict.get(lst_line[7], 0) + 1
-        except Exception as ex:
+            tot_size += int(lst_line[-1])
+            if lst_line[-2] in all_stats:
+                my_dict[lst_line[-2]] = my_dict.get(lst_line[-2], 0) + 1
+        except Exception as e:
             pass
     print(f"File size: {tot_size}")
     for key in sorted(my_dict.keys()):
