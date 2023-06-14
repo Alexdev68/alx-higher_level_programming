@@ -5,14 +5,14 @@ import sys
 import signal
 
 
-def interrupter(signal, frame):
+def handle_interrupt(signal, frame):
     print(f"File size: {tot_size}")
     for key in sorted(my_dict.keys()):
         print(f"{key}: {my_dict[key]}")
     sys.exit(0)
 
 
-signal.signal(signal.SIGINT, interrupter)
+signal.signal(signal.SIGINT, handle_interrupt)
 
 count = 0
 tot_size = 0
