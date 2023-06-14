@@ -20,7 +20,7 @@ try:
             tot_size += int(lst_line[8])
             if lst_line[7] in all_stats:
                 my_dict[lst_line[7]] = my_dict.get(lst_line[7], 0) + 1
-        except IndexError:
+        except Exception:
             pass
     print(f"File size: {tot_size}")
     for key in sorted(my_dict.keys()):
