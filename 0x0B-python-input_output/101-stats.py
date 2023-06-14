@@ -13,7 +13,7 @@ for line in stdin:
     tot_size += int(lst_line[8])
     my_dict[lst_line[7]] = my_dict.get(lst_line[7], 0) + 1
     if count == 10:
-        print(f"File size:{tot_size}")
+        print(f"File size: {tot_size}")
         for key in sorted(my_dict.keys()):
             print(f"{key}: {my_dict[key]}")
     if count == 10:
