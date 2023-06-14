@@ -16,8 +16,8 @@ try:
             count = 0
         count += 1
         lst_line = line.split()
-        tot_size += int(lst_line[8])
         try:
+            tot_size += int(lst_line[8])
             if lst_line[7] in all_stats:
                 my_dict[lst_line[7]] = my_dict.get(lst_line[7], 0) + 1
         except IndexError:
