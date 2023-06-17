@@ -108,6 +108,13 @@ class Base:
     
     @classmethod
     def save_to_file_csv(cls, list_objs):
+        """This method implements csv(Comma Separated values)
+        and saves a list of dictionaries to a file.
+
+        Arg:
+            list_objs(list): This contains a list of class objects.
+
+        """
         dlist = []
 
         for i in list_objs:
@@ -126,6 +133,12 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
+        """This method also implements csv to read from a file.
+
+        Returns:
+            list: A list of instances with all attributes already set.
+
+        """
         with open(cls.__name__ + '.csv', 'r') as csvfile:
             if cls.__name__ == "Rectangle":
                 layout = ['id', 'width', 'height', 'x', 'y']
