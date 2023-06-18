@@ -4,6 +4,7 @@
 import json
 import csv
 from pathlib import Path
+from turtle import *
 
 
 class Base:
@@ -105,7 +106,7 @@ class Base:
                 stuff.append(data)
 
             return stuff
-    
+
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """This method implements csv(Comma Separated values)
@@ -162,3 +163,37 @@ class Base:
 
             return bst_list
 
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """This method draws squares and rectangles passed.
+        """
+        wn = Screen().bgcolor("sky blue")
+        shape('turtle')
+
+        for i in list_rectangles:
+            rect = i
+            pensize(3)
+            pencolor("dark red")
+            up()
+            setpos(rect.x, rect.y)
+            down()
+            for _ in range(2):
+                fd(rect.width)
+                rt(90)
+                fd(rect.height)
+                rt(90)
+
+        for g in list_squares:
+            sqr = g
+            pensize(3)
+            pencolor("dark green")
+            up()
+            setpos(sqr.x, sqr.y)
+            down()
+            for u in range(2):
+                fd(sqr.size)
+                lt(90)
+                fd(sqr.size)
+                lt(90)
+        ht()
+        done()
