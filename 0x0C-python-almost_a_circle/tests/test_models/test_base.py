@@ -81,6 +81,22 @@ class Test_base(unittest.TestCase):
                    '{"x": 2, "y": 3, "id": 9, "height": 30, "width": 50}]'
         self.assertEqual(str(json_dict), expected)
 
+    def test_to_json_string_square1(self):
+        bas4 = Rectangle(20, 4, 5, -3)
+        bas4_2 = Rectangle(50, 2, 3, 9).to_dictionary()
+        dic = bas4.to_dictionary()
+        json_dict = Base.to_json_string([dic, bas4_2])
+        expected = '[{"x": 4, "y": 5, "id": -3, "size": 20}, '\
+                   '{"x": 2, "y": 3, "id": 9, "size": 50}]'
+        self.assertEqual(str(json_dict), expected)
+
+    def test_to_json_string_square2(self):
+        bas1 = Rectangle(20, 4, 5, -3)
+        dic = bas1.to_dictionary()
+        json_dict = Base.to_json_string([dic])
+        expected = '[{"x": 4, "y": 5, "id": -9, "size": 20}]'
+        self.assertEqual(str(json_dict), expected)
+
     def test_save_to_file(self):
         r1 = Rectangle(33, 11, 5, 6, 1)
         Rectangle.save_to_file([r1])
