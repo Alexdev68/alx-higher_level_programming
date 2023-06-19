@@ -42,8 +42,9 @@ class Base:
         """This method saves a list of dictionaries to a file.
         """
         dlist = []
-        for i in list_objs:
-            dlist.append(i.to_dictionary())
+        if not (list_objs is None or len(list_objs) == 0): 
+            for i in list_objs:
+                dlist.append(i.to_dictionary())
 
         with open(cls.__name__ + '.json', 'w', encoding="UTF8") as f:
             f.write(cls.to_json_string(dlist))
