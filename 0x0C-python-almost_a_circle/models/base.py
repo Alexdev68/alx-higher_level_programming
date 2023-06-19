@@ -42,7 +42,7 @@ class Base:
         """This method saves a list of dictionaries to a file.
         """
         dlist = []
-        if not (list_objs is None or len(list_objs) == 0): 
+        if not (list_objs is None or len(list_objs) == 0):
             for i in list_objs:
                 dlist.append(i.to_dictionary())
 
