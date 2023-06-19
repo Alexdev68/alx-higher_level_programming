@@ -4,6 +4,7 @@
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
+from models.square import Square
 
 
 class Test_base(unittest.TestCase):
@@ -106,3 +107,16 @@ class Test_base(unittest.TestCase):
             data = f.read()
 
         self.assertEqual(len(data), 2)
+
+    def test_save_to_file_square1(self):
+        s1 = Square(1, 2, 3, 4)
+        Square.save_to_file([s1])
+        with open("Square.json", 'r') as f:
+            self.assertEqual(len(f.read()), 38)
+
+    def test_save_to_file_square2(self):
+        s1 = Square(1, 2, 3, 4)
+        s2 = Square(4, 8, 12, 16)
+        Square.save_to_file([s1, s2])
+        with open("Square.json", 'r') as f:
+            self.assertEqual(len(f.read()), 78)
