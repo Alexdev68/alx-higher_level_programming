@@ -41,6 +41,14 @@ class Test_base(unittest.TestCase):
         e7 = Base("great")
         self.assertEqual(e7.id, 'great')
 
+    def test_base_id_tuple(self):
+        e8 = Base((2, 5, 3, 10))
+        self.assertEqual(e8.id, (2, 5, 3, 10))
+
+    def test_base_id_tuple(self):
+        e9 = Base(2.6)
+        self.assertEqual(e9.id, 2.6)
+
     def test_to_json_string(self):
         bas1 = Rectangle(40, 20, 4, 5, 1)
         dic = bas1.to_dictionary()
@@ -71,3 +79,30 @@ class Test_base(unittest.TestCase):
         expected = '[{"x": 4, "y": 5, "id": -3, "height": 40, "width": 20}, '\
                    '{"x": 2, "y": 3, "id": 9, "height": 30, "width": 50}]'
         self.assertEqual(str(json_dict), expected)
+
+    def test_save_to_file(self):
+        r1 = Rectangle(33, 11, 5, 6, 1)
+        Rectangle.save_to_file([r1])
+
+        with open("Rectangle.json", 'r', encoding="UTF8")as f:
+            data = f.read()
+
+        self.assertEqual(len(data), 54)
+
+    def test_save_to_file1(self):
+        r2 = Rectangle(33, 11, 5, 6, 1)
+        r2_2 = Rectangle(60, 44, 3, 5, 9)
+        Rectangle.save_to_file([r2, r2_2])
+
+        with open("Rectangle.json", 'r', encoding="UTF8")as f:
+            data = f.read()
+
+        self.assertEqual(len(data), 108)
+
+    def test_save_to_file2(self):
+        Rectangle.save_to_file(None)
+
+        with open("Rectangle.json", 'r', encoding="UTF8")as f:
+            data = f.read()
+
+        self.assertEqual(len(data), 2)
