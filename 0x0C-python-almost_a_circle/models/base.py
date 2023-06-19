@@ -4,13 +4,12 @@
 import json
 import csv
 from pathlib import Path
-from turtle import *
+import turtle
 
 
 class Base:
     """This class has a private class attribute named ``__nb_objects``.
     """
-
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -167,33 +166,34 @@ class Base:
     def draw(list_rectangles, list_squares):
         """This method draws squares and rectangles passed.
         """
-        wn = Screen().bgcolor("sky blue")
-        shape('turtle')
+        h = turtle.Turtle()
+        wn = h.Screen().bgcolor("sky blue")
+        h.shape('turtle')
 
         for i in list_rectangles:
             rect = i
-            pensize(3)
-            pencolor("dark red")
-            up()
-            setpos(rect.x, rect.y)
-            down()
+            h.pensize(3)
+            h.pencolor("dark red")
+            h.up()
+            h.setpos(rect.x, rect.y)
+            h.down()
             for _ in range(2):
-                fd(rect.width)
-                rt(90)
-                fd(rect.height)
-                rt(90)
+                h.fd(rect.width)
+                h.rt(90)
+                h.fd(rect.height)
+                h.rt(90)
 
         for g in list_squares:
             sqr = g
-            pensize(3)
-            pencolor("dark green")
-            up()
-            setpos(sqr.x, sqr.y)
-            down()
+            h.pensize(3)
+            h.pencolor("dark green")
+            h.up()
+            h.setpos(sqr.x, sqr.y)
+            h.down()
             for u in range(2):
-                fd(sqr.size)
-                lt(90)
-                fd(sqr.size)
-                lt(90)
-        ht()
-        done()
+                h.fd(sqr.size)
+                h.lt(90)
+                h.fd(sqr.size)
+                h.lt(90)
+        h.ht()
+        h.done()
