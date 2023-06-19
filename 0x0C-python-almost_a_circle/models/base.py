@@ -41,12 +41,12 @@ class Base:
     def save_to_file(cls, list_objs):
         """This method saves a list of dictionaries to a file.
         """
-            dlist = []
-            for i in list_objs:
-                dlist.append(i.to_dictionary())
+        dlist = []
+        for i in list_objs:
+            dlist.append(i.to_dictionary())
 
-            with open(cls.__name__ + '.json', 'w', encoding="UTF8") as f:
-                f.write(cls.to_json_string(dlist))
+        with open(cls.__name__ + '.json', 'w', encoding="UTF8") as f:
+            f.write(cls.to_json_string(dlist))
 
     @staticmethod
     def from_json_string(json_string):
