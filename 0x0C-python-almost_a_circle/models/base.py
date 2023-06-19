@@ -43,7 +43,7 @@ class Base:
         """
         if list_objs is None:
             with open(cls.json, 'w', encoding="UTF8") as f:
-                f.write(cls.to_json-string([]))
+                f.write([])
 
         else:
             dlist = []
