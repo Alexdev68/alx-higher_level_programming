@@ -41,11 +41,6 @@ class Base:
     def save_to_file(cls, list_objs):
         """This method saves a list of dictionaries to a file.
         """
-        if list_objs is None:
-            with open(cls.json, 'w', encoding="UTF8") as f:
-                f.write([])
-
-        else:
             dlist = []
             for i in list_objs:
                 dlist.append(i.to_dictionary())
@@ -75,7 +70,10 @@ class Base:
             instance: dumz.
 
         """
-        dumz = cls(5, 7)
+        if cls.__name__ = "Rectangle":
+            dumz = cls(5, 7)
+        elif cls.__name__ = "Square":
+            dumz = cls(6)
         dumz.update(**dictionary)
         return dumz
 
