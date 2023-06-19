@@ -3,8 +3,7 @@
 """
 import json
 import csv
-#from pathlib import Path
-import turtle
+from turtle import *
 
 
 class Base:
@@ -89,22 +88,18 @@ class Base:
                   a list of instances.
 
         """
-        path = Path(
-                f'/alx-higher_level_programming/'
-                f'0x0C-python-almost_a_circle/{cls.__name__ + ".json"}')
+        try:
+            with open(cls.__name__ + '.json', 'r', encoding="UTF8") as d:
+                newlist = cls.from_json_string(d.read())
+                stuff = []
 
-        if not path.exists():
+                for i in newlist:
+                    data = cls.create(**i)
+                    stuff.append(data)
+
+                return stuff
+        except IOError:
             return []
-
-        with open(cls.__name__ + '.json', 'r', encoding="UTF8") as d:
-            newlist = cls.from_json_string(d.read())
-            stuff = []
-
-            for i in newlist:
-                data = cls.create(**i)
-                stuff.append(data)
-
-            return stuff
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
@@ -166,34 +161,33 @@ class Base:
     def draw(list_rectangles, list_squares):
         """This method draws squares and rectangles passed.
         """
-        h = turtle.Turtle()
-        wn = h.Screen().bgcolor("sky blue")
-        h.shape('turtle')
+        wn = Screen().bgcolor("sky blue")
+        shape('turtle')
 
         for i in list_rectangles:
             rect = i
-            h.pensize(3)
-            h.pencolor("dark red")
-            h.up()
-            h.setpos(rect.x, rect.y)
-            h.down()
+            pensize(3)
+            pencolor("dark red")
+            up()
+            setpos(rect.x, rect.y)
+            down()
             for _ in range(2):
-                h.fd(rect.width)
-                h.rt(90)
-                h.fd(rect.height)
-                h.rt(90)
+                fd(rect.width)
+                rt(90)
+                fd(rect.height)
+                rt(90)
 
         for g in list_squares:
             sqr = g
-            h.pensize(3)
-            h.pencolor("dark green")
-            h.up()
-            h.setpos(sqr.x, sqr.y)
-            h.down()
+            pensize(3)
+            pencolor("dark green")
+            up()
+            setpos(sqr.x, sqr.y)
+            down()
             for u in range(2):
-                h.fd(sqr.size)
-                h.lt(90)
-                h.fd(sqr.size)
-                h.lt(90)
-        h.ht()
-        h.done()
+                fd(sqr.size)
+                lt(90)
+                fd(sqr.size)
+                lt(90)
+        ht()
+        done()
