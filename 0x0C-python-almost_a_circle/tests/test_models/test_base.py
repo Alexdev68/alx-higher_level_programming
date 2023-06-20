@@ -158,9 +158,9 @@ class Test_base(unittest.TestCase):
         Square.save_to_file([])
 
         with open("Square.json", 'r', encoding="UTF8")as f:
-            data = f.read()
+            beta = f.read()
 
-        self.assertEqual(len(data), 2)
+        self.assertEqual(len(beta), 2)
 
     def test_from_json_string(self):
         decoded = Base.from_json_string(None)
@@ -216,5 +216,5 @@ class Test_base(unittest.TestCase):
             remove("Rectangle.json")
         except IOError:
             pass
-        mit = Rectangle.load_from_file()
-        self.assertEqual(len(mit), 0)
+        fit = Rectangle.load_from_file()
+        self.assertEqual(len(fit), 0)

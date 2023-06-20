@@ -234,35 +234,35 @@ class Test_rectangle(unittest.TestCase):
 
     def test_rect_TypeError(self):
         with self.assertRaises(TypeError):
-            ice = Rectangle("rizz", 30, 3, 5, 1)
+            ice = Rectangle("rizz", 30)
 
     def test_width_errormsg(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            Rectangle("rizz", 30, 3, 5, 1)
+            Rectangle("rizz", 30)
 
     def test_rect_TypeError1(self):
         with self.assertRaises(TypeError):
-            ice = Rectangle(40, "yonko", 6, 7, -2)
+            ice = Rectangle(40, "yonko")
 
     def test_height_errormsg(self):
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
-            Rectangle(40, "yonko", 6, 7, -2)
+            Rectangle(40, "yonko")
 
     def test_rect_TypeError2(self):
         with self.assertRaises(TypeError):
-            ice = Rectangle(40, 20, "crypt", 7, -2)
+            ice = Rectangle(40, 20, "crypt")
 
     def test_x_errormsg(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Rectangle(40, 20, "crypt", 7, -2)
+            Rectangle(40, 20, "crypt")
 
     def test_rect_TypeError3(self):
         with self.assertRaises(TypeError):
-            ice = Rectangle(40, 20, 6, "freak", -2)
+            ice = Rectangle(40, 20, 6, "freak")
 
     def test_y_errormsg(self):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            Rectangle(40, 20, 6, "freak", -2)
+            Rectangle(40, 20, 6, "freak")
 
     def test_rect_TypeError4(self):
         with self.assertRaises(ValueError):
