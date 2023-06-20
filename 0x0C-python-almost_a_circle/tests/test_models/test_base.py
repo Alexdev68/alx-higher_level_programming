@@ -131,7 +131,7 @@ class Test_base(unittest.TestCase):
         with open("Rectangle.json", 'r', encoding="UTF8")as f:
             data = f.read()
 
-        self.assertEqual(len(data), 2)
+        self.assertEqual(data, '[]')
 
     def test_save_to_file_square1(self):
         s1 = Square(1, 2, 3, 4)
@@ -160,7 +160,7 @@ class Test_base(unittest.TestCase):
         with open("Square.json", 'r', encoding="UTF8")as f:
             beta = f.read()
 
-        self.assertEqual(len(beta), 2)
+        self.assertEqual(beta, '[]')
 
     def test_from_json_string(self):
         decoded = Base.from_json_string(None)
