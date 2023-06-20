@@ -2,6 +2,7 @@
 """This module tests the Base class.
 """
 import unittest
+from os import remove
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -181,3 +182,39 @@ class Test_base(unittest.TestCase):
 
         rit = Rectangle.create(**mi_dict)
         self.assertEqual(str(rit), "[Rectangle] (95) 0/0 - 5/7")
+
+    def test_create(self):
+        mi_dict = {'id': 95}
+
+        rit = Square.create(**mi_dict)
+        self.assertEqual(str(rit), "[Square] (95) 0/0 - 6")
+
+    def test_load_from_file_square1(self):
+        s1 = Square(1, 2, 3, 4)
+        s2 = Square(3, 5, 7, 8)
+        Square.save_to_file([s1, s2])
+        mit = Square.load_from_file()
+        self.assertEqual(len(mit), 2)
+
+    def test_load_from_file_rectangle1(self):
+        r1 = Rectangle(1, 2, 3, 4)
+        r2 = Rectangle(3, 5, 7, 8)
+        Rectangle.save_to_file([r1, r2])
+        mit = Rectangle.load_from_file()
+        self.assertEqual(len(mit), 2)
+
+    def test_load_from_file_square1_not_exists(self):
+        try:
+            remove("Square.json")
+        except IOError:
+            pass
+        mit = Square.load_from_file()
+        self.assertEqual(len(mit), 0)
+
+    def test_load_from_file_rectangle1_not_exists(self):
+        try:
+            remove("Rectangle.json")
+        except IOError:
+            pass
+        mit = Rectangle.load_from_file()
+        self.assertEqual(len(mit), 0)

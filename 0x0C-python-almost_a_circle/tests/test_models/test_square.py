@@ -64,6 +64,18 @@ class Test_square(unittest.TestCase):
         sqr3 = Square(50, 30, 3, -99)
         self.assertEqual(sqr3.area(), 2500)
 
+    def test_sqr_area3(self):
+        sqrr = Square(72)
+        self.assertEqual(sqrr.area(), 5184)
+
+    def test_sqr_area4(self):
+        sqr4 = Square(72, 4)
+        self.assertEqual(sqr4.area(), 5184)
+
+    def test_sqr_area5(self):
+        sqr3 = Square(72, 4, 3)
+        self.assertEqual(sqr3.area(), 5184)
+
     def test_sqr_str(self):
         r1 = Square(50, 0, 0, 35)
         self.assertEqual(str(r1), "[Square] (35) 0/0 - 50")
