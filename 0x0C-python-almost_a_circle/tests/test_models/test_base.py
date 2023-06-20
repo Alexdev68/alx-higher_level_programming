@@ -124,6 +124,14 @@ class Test_base(unittest.TestCase):
 
         self.assertEqual(len(data), 2)
 
+    def test_save_to_file3(self):
+        Rectangle.save_to_file([])
+
+        with open("Rectangle.json", 'r', encoding="UTF8")as f:
+            data = f.read()
+
+        self.assertEqual(len(data), 2)
+
     def test_save_to_file_square1(self):
         s1 = Square(1, 2, 3, 4)
         Square.save_to_file([s1])
@@ -136,3 +144,40 @@ class Test_base(unittest.TestCase):
         Square.save_to_file([s1, s2])
         with open("Square.json", 'r') as f:
             self.assertEqual(len(f.read()), 78)
+
+    def test_save_to_file_square3(self):
+        Square.save_to_file(None)
+
+        with open("Square.json", 'r', encoding="UTF8")as f:
+            data = f.read()
+
+        self.assertEqual(len(data), 2)
+
+    def test_save_to_file_square4(self):
+        Square.save_to_file([])
+
+        with open("Square.json", 'r', encoding="UTF8")as f:
+            data = f.read()
+
+        self.assertEqual(len(data), 2)
+
+    def test_from_json_string(self):
+        decoded = Base.from_json_string(None)
+
+        self.assertEqual(decoded, [])
+
+    def test_from_json_string1(self):
+        decoded = Base.from_json_string("[]")
+
+        self.assertEqual(decoded, [])
+
+    def test_from_json_string(self):
+        decoded = Base.from_json_string('[{"id": 95}]')
+
+        self.assertEqual(decoded, [{'id': 95}])
+
+    def test_create(self):
+        mi_dict = {'id': 95}
+
+        rit = Rectangle.create(**mi_dict)
+        self.assertEqual(str(rit), "[Rectangle] (95) 0/0 - 5/7")
