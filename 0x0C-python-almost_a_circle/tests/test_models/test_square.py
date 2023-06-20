@@ -116,6 +116,27 @@ class Test_square(unittest.TestCase):
         expected = "##\n##\n"
         self.assertEqual(x.getvalue(), expected)
 
+    def test_sqr_display3(self):
+        rg4 = Square(3)
+
+        x = self.capt_out(rg4)
+        expected = "###\n###\n###\n"
+        self.assertEqual(x.getvalue(), expected)
+
+    def test_sqr_display4(self):
+        rgg = Square(2, 3)
+
+        x = self.capt_out(rgg)
+        expected = "   ##\n   ##\n"
+        self.assertEqual(x.getvalue(), expected)
+
+    def test_sqr_display5(self):
+        rg5 = Square(2, 3, 1)
+
+        x = self.capt_out(rg5)
+        expected = "\n   ##\n   ##\n"
+        self.assertEqual(x.getvalue(), expected)
+
     def test_sqr_display_han_x_y(self):
         qw = Square(5, 2, 3, 15)
 

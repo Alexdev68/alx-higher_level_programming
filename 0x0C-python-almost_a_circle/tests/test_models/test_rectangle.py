@@ -65,6 +65,18 @@ class Test_rectangle(unittest.TestCase):
         rect3 = Rectangle(50, 30, 3, 5, -99)
         self.assertEqual(rect3.area(), 1500)
 
+    def test_rect_area3(self):
+        rectq = Rectangle(40, 15)
+        self.assertEqual(rectq.area(), 600)
+
+    def test_rect_area4(self):
+        rect4 = Rectangle(40, 15, 3)
+        self.assertEqual(rect4.area(), 600)
+
+    def test_rect_area5(self):
+        rect5 = Rectangle(40, 15, 3, 5)
+        self.assertEqual(rect5.area(), 600)
+
     def test_rect_str(self):
         r1 = Rectangle(50, 30, 0, 0, 35)
         self.assertEqual(str(r1), "[Rectangle] (35) 0/0 - 50/30")
