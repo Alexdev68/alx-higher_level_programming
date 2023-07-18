@@ -3,14 +3,12 @@
 """
 import json
 import csv
-from pathlib import Path
 from turtle import *
 
 
 class Base:
     """This class has a private class attribute named ``__nb_objects``.
     """
-
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -34,8 +32,8 @@ class Base:
                  returns the JSON string representation of list_dictionaries.
 
         """
-        if list_dictionaries is None or list_dictionaries == {}:
-            return json.dumps([])
+        if list_dictionaries is None or list_dictionaries == []:
+            return "[]"
         else:
             return json.dumps(list_dictionaries)
 
@@ -43,17 +41,13 @@ class Base:
     def save_to_file(cls, list_objs):
         """This method saves a list of dictionaries to a file.
         """
-        if list_objs is None:
-            with open(cls.json, 'w', encoding="UTF8") as f:
-                f.write("[]")
-
-        else:
-            dlist = []
+        dlist = []
+        if not (list_objs is None or len(list_objs) == 0):
             for i in list_objs:
                 dlist.append(i.to_dictionary())
 
-            with open(cls.__name__ + '.json', 'w', encoding="UTF8") as f:
-                f.write(cls.to_json_string(dlist))
+        with open(cls.__name__ + '.json', 'w', encoding="UTF8") as f:
+            f.write(cls.to_json_string(dlist))
 
     @staticmethod
     def from_json_string(json_string):
@@ -77,7 +71,10 @@ class Base:
             instance: dumz.
 
         """
-        dumz = cls(5, 7)
+        if cls.__name__ == "Rectangle":
+            dumz = cls(5, 7)
+        elif cls.__name__ == "Square":
+            dumz = cls(6)
         dumz.update(**dictionary)
         return dumz
 
@@ -90,22 +87,18 @@ class Base:
                   a list of instances.
 
         """
-        path = Path(
-                f'/alx-higher_level_programming/'
-                f'0x0C-python-almost_a_circle/{cls.__name__ + ".json"}')
+        try:
+            with open(cls.__name__ + '.json', 'r', encoding="UTF8") as d:
+                newlist = cls.from_json_string(d.read())
+                stuff = []
 
-        if not path.exists():
+                for i in newlist:
+                    data = cls.create(**i)
+                    stuff.append(data)
+
+                return stuff
+        except IOError:
             return []
-
-        with open(cls.__name__ + '.json', 'r', encoding="UTF8") as d:
-            newlist = cls.from_json_string(d.read())
-            stuff = []
-
-            for i in newlist:
-                data = cls.create(**i)
-                stuff.append(data)
-
-            return stuff
 
     @classmethod
     def save_to_file_csv(cls, list_objs):

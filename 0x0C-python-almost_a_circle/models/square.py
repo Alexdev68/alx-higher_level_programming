@@ -20,7 +20,6 @@ class Square(Rectangle):
 
         """
         super().__init__(size, size, x, y, id)
-        self.__size = size
 
     @property
     def size(self):
@@ -35,17 +34,12 @@ class Square(Rectangle):
             The public instance attribute self.size.
 
         """
-        return self.__size
+        return self.width
 
     @size.setter
     def size(self, value):
         self.width = value
         self.height = value
-
-        if not isinstance(self.width, int):
-            raise TypeError('width must be an integer')
-        if self.width <= 0:
-            raise ValueError('width must be > 0')
 
     def __str__(self):
         """This is the __str__ method.
