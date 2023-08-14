@@ -1,0 +1,2 @@
+# JavaScript - Warm up
+This is an intro to javascript programming language. JavaScript is a versatile and widely used programming language that's primarily known for its role in web development. It's a high-level, dynamically typed language that allows developers to create interactive and dynamic content on websites. JavaScript is executed on the client side (in the user's browser) and can manipulate the Document Object Model (DOM), which represents the structure and content of a web page.
