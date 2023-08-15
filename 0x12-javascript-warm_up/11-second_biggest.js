@@ -14,7 +14,7 @@ function SndLargest (array) {
   } else if (arr.length === 1) {
     console.log(0);
   } else {
-    arr.sort(function(a, b) {
+    arr.sort(function (a, b) {
       return a - b;
     });
     const array1 = arr.reverse();
