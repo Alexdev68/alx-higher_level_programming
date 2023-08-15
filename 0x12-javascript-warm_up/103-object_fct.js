@@ -5,11 +5,15 @@ const myObject = {
 };
 console.log(myObject);
 
-Object.defineProperty(myObject, 'incr', {
-  value: () => {
-    myObject.value += 1;
-  }
-});
+function incr () {
+  Object.defineProperty(myObject, 'incr', {
+    value: () => {
+      myObject.value += 1;
+    }
+  });
+}
+myObject.incr = '[Function]';
+incr();
 myObject.incr();
 console.log(myObject);
 myObject.incr();
