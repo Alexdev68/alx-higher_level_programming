@@ -3,7 +3,7 @@ const a = process.argv;
 const arr = [];
 let i;
 
-for (i = 2; i < a.length - 2; i++) {
+for (i = 2; i < a.length; i++) {
   arr.push(parseInt(a[i]));
 }
 
