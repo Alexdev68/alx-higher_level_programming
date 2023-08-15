@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const a = process.argv;
 
-function snd_largest (array) {
+function SndLargest (array) {
   const arr = [];
   let i;
 
@@ -14,10 +14,12 @@ function snd_largest (array) {
   } else if (arr.length === 1) {
     console.log(0);
   } else {
-    arr.sort();
+    arr.sort(function(a, b) {
+      return a - b;
+    });
     const array1 = arr.reverse();
     console.log(array1[1]);
   }
 }
 
-snd_largest(a);
+SndLargest(a);
