@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const [,, arg] = process.argv;
 let i = 0;
-const x = 'x';
+const x = 'X';
 
 if (!isNaN(arg)) {
   const num = parseInt(arg);
