@@ -4,6 +4,6 @@ const { list } = require('./100-data.js');
 
 console.log(list);
 
-const mappe = list.map((x) => x * list.indexOf(x));
+const mapped = list.map((val, index) => val * index);
 
-console.log(mappe);
+console.log(mapped);
