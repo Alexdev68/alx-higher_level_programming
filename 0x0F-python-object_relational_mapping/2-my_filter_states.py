@@ -16,8 +16,8 @@ if __name__ == "__main__":
     state = argv[4]
 
     cur.execute(
-            "SELECT * FROM states WHERE name = %s ORDER BY states.id",
-            (state,)
+            "SELECT * FROM states WHERE name = '{}' ORDER BY states.id"
+            .format(state)
             )
 
     rows = cur.fetchall()
