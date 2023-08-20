@@ -18,6 +18,7 @@ class State(Base):
     """This is the class that inherits from base."""
 
     __tablename__ = "states"
+    """This defines the name of the table"""
 
     id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
