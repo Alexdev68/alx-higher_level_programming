@@ -18,10 +18,11 @@ if __name__ == "__main__":
 
     session = Session()
 
-    rows = session.query(State).all()
+    rows = session.query(State).order_by(State.id).first()
 
-    for row in rows:
-        if row.id == 1:
-            print("{}: {}".format(row.id, row.name))
+    if rows is not None:
+        print("{}: {}".format(rows.id, rows.name))
+    else:
+        print('')
 
     session.close()
