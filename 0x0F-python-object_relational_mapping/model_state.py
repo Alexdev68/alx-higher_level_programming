@@ -19,11 +19,5 @@ class State(Base):
 
     __tablename__ = "states"
 
-    id = Column(Integer, primary_key=True, nullable=True)
+    id = Column(Integer, primary_key=True)
     name = Column(String(128), nullable=False)
-
-
-engine = create_engine(url="mysql+mysqldb://{}:{}@{}:{}/{}".format(
-    user, password, host, port, db_name))
-
-Base.metadata.create_all(engine)
