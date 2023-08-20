@@ -7,12 +7,6 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
-user = "root"
-host = "localhost"
-port = 3306
-password = "root"
-db_name = "hbtn_0e_6_usa"
-
 
 class State(Base):
     """This is the class that inherits from base."""
