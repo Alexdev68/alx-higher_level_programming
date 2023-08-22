@@ -18,7 +18,7 @@ if __name__ == "__main__":
     session = Session()
 
     stat = State(name="California")
-    cit = City(name="San Francisco", state_id=1)
+    cit = City(name="San Francisco", state=stat)
 
     session.add(stat)
     session.add(cit)
